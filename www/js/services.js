@@ -48,7 +48,7 @@ angular.module('starter.services', ["firebase"])
     }
   };
 })
-    .factory('Chats', function(FURL, $firebaseArray) {
+    .factory('Products', function(FURL, $firebaseArray) {
       var ref = new Firebase(FURL);
       var products = $firebaseArray(ref.child('products'))
 
