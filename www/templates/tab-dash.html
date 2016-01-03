@@ -4,7 +4,7 @@
     <ion-item class="list card" ng-repeat="product in products">
 
       <div class="item item-avatar">
-        <img src="avatar.jpg">
+        <img src={{product.seller_image}}>
         <h2>{{product.name}}</h2>
         <p>{{product.tagline}}</p>
       </div>
