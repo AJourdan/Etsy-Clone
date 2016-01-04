@@ -14,3 +14,25 @@
 	padding-left: 20px;
 }
 
+.ion-images:before {
+	font-size: 80px;
+}
+
+button i.ion-ios-camera:before {
+	font-size: 80px;
+}
+
+div.list.card.photoChoice {
+	margin-top: 30%;
+}
+
+div.item.item-divider.title {
+	padding: 5%;
+	background-color: #11c1f3;
+}
+
+div.item.item-divider.title h2{
+	color: #ffffff;
+	text-align: center;
+	font-size: 22px;
+}
