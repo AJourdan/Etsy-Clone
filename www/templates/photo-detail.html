@@ -15,8 +15,10 @@
        <label class="item item-input">
          <input type="text" ng-model="product.price"placeholder="Price">
        </label>
-       <img style="height: 200px; width: 200px"src="http://productshots2.modcloth.net/productshots/0024/2697/a7f50a7b443a4b8571a9c3b0e89bc890.jpg?1258578886" >
+       <img style="height: 200px; width: 200px" ng-src="{{imgURI}}" >
+
        <br/>
+       
        <button type="submit" class="button button-block button-positive">
           Submit
        </button>

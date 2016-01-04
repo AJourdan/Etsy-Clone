@@ -36,3 +36,7 @@ div.item.item-divider.title h2{
 	text-align: center;
 	font-size: 22px;
 }
+
+div.item.item-image.choice {
+	padding: 5%;
+}

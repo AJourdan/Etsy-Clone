@@ -1,11 +1,29 @@
 'use strict';
 
-app.controller('PhotoCtrl', function($scope) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
+app.controller('PhotoCtrl', function($scope, $cordovaCamera, $rootScope, $state) {
+	$scope.takePhoto = function() {
+		console.log('takePhoto was clicked');
+		// Camera Plugin
+
+		var options = {
+			quality: 75,
+			destinationType: Camera.DestinationType.DATA_URL,
+			sourceTrype: Camera.PictureSourceType.CAMERA,
+			allowEdit: true,
+			encodingType: Camera.EncodingType.JPEG,
+			popoverOptions; CameraPopoverOptions,
+			targetWidth: 500,
+			targetHeight: 500,
+			saveToPhotoAlbum: false
+		};
+
+		$cordovaCamera.getPicture(options).then(function(photo){
+			$rootScope.imgURI = "data:image/jpeg;base64," +photo;
+			$state.go('tab.photo-detail');
+		})
+	}
+
+	$scope.choosePhoto = function() {
+		console.log('will link up to PhotoLibrary');
+	}
 });

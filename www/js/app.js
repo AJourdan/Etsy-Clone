@@ -8,6 +8,7 @@
 var app = angular.module('starter', [
   'ionic',
   'firebase'
+  'ngCordova'
   ])
 
 .run(function($ionicPlatform) {
