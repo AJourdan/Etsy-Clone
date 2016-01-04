@@ -1,7 +1,7 @@
 'use strict';
 
 app.controller('PhotoCtrl', function($scope, $cordovaCamera, $rootScope, $state) {
-
+		
 	var options = {
 		quality: 75,
 		destinationType: Camera.DestinationType.DATA_URL,
@@ -14,13 +14,10 @@ app.controller('PhotoCtrl', function($scope, $cordovaCamera, $rootScope, $state)
 	};
 
 
-
-
 	$scope.takePhoto = function() {
 		console.log('takePhoto was clicked');
 		// Camera Plugin
-		options.sourceType = Camera.PictureSourceType.CAMERA,		
-
+		options.sourceType = Camera.PictureSourceType.CAMERA;
 
 
 		$cordovaCamera.getPicture(options).then(function(photo){
@@ -31,11 +28,12 @@ app.controller('PhotoCtrl', function($scope, $cordovaCamera, $rootScope, $state)
 
 	$scope.choosePhoto = function() {
 		console.log('will link up to PhotoLibrary');
-		options.sourceType = Camera.PictureSourceType.PHOTOLIBRARY,
+		options.sourceType = Camera.PictureSourceType.PHOTOLIBRARY;
 
 		$cordovaCamera.getPicture(options).then(function(photo){
 			$rootScope.imgURI = "data:image/jpeg;base64," +photo;
 			$state.go('tab.photo-detail');
 		})
 	}
+
 });

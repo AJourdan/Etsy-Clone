@@ -8,6 +8,6 @@ app.controller('PhotoDetailCtrl', function($scope, $state, Products, $rootScope)
     // console.log("button was clicked", product, $scope.image);
     Products.saveProduct(product, $scope.imgURI).then(function(){
     	$state.go('tab.dash');
-    })
+    });
    }
 });
